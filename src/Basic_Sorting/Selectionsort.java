@@ -9,6 +9,8 @@ public class Selectionsort {
     }
     public static void main(String[] args) {
     int [] arr={5,-2,6,7,2,0,7,2};
+
+
     int n=arr.length;
     print(arr);
     for (int i=0;i<n-1;i++){
