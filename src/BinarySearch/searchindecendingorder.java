@@ -16,7 +16,9 @@ public class searchindecendingorder {
         int hi=arr.length-1;
         while(lo<=hi){
             int mid=(hi+lo)/2;
-            if (arr[mid]==tar)return mid;
+            if (arr[mid] == tar) {
+                return mid;
+            }
             if (arr[mid]>tar)lo=mid+1;
             else if (arr[mid]<tar)hi=mid-1;
         }
