@@ -7,7 +7,7 @@ public class peakindexinmountainarray {
         System.out.println("Peak index is found at index "+result);
     }
         public static int peakIndex(int[] arr) {
-            int lo=1,hi=arr.length-2;
+            int lo=1,hi=arr.length-2;//lo to hi is search space
             while(lo<=hi){
                 int mid=(lo+hi)/2;
                 if(arr[mid]>arr[mid-1] && arr[mid]>arr[mid+1])
