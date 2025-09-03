@@ -4,13 +4,12 @@ public class singleindoubles {
     public static void main(String[] args) {
         int [] arr={1,1,2,2,3,3,4,5,5,6,6};
         int n=arr.length;
+        for(int i=0;i<n;i++){
+            System.out.print(arr[i]+" ");
+        }
+        System.out.println();
         int result=search(n,arr);
-        if(result!=-1){
-            System.out.println("single element is found at index "+result);
-        }
-        else{
-            System.out.println("no single element");
-        }
+        System.out.println(result);
     }
         public static int search(int n, int arr[]) {
             // your code here
@@ -30,7 +29,7 @@ public class singleindoubles {
                 if(leftcount%2==0)lo=s+1;
                 else hi=f-1;
             }
-            return 988;
+            return 1;
         }
     }
 
