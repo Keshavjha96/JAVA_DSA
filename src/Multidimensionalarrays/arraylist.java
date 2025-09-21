@@ -13,9 +13,11 @@ public class arraylist {
         ArrayList<ArrayList<Integer>> arr=new ArrayList<>();
         arr.add(a);arr.add(b);arr.add(c);
 
-        for (int i=0;i<arr.size();i++){
-            for (int j=0;j<arr.get(i).size();j++){
-                System.out.print(arr.get(i).get(j)+" ");
+//
+
+        for (ArrayList<Integer> list:arr){
+            for (int ele:list){
+                System.out.print(ele+" ");
             }
             System.out.println();
         }
