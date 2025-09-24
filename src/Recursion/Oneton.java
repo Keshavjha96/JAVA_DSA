@@ -8,6 +8,7 @@ public class Oneton {
             Scanner sc = new Scanner(System.in);
             n=sc.nextInt();
             print(1);
+       //     print(1,n);
     }
     public static void print(int x){
         if (x>n) return;
