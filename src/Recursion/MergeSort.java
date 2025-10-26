@@ -20,7 +20,8 @@ public class MergeSort {
         for (int i=0;i<b.length;i++)
             b[i]=arr[idx++];
         //Step 3 :Magic
-        mergeSort(a); mergeSort(b);
+        mergeSort(a);
+        mergeSort(b);
         //Step 4 : Merge 'a' and 'b' into arr
         merge(a,b,arr);
 
@@ -31,8 +32,10 @@ public class MergeSort {
             if (a[i] <= b[j]) c[k++] = a[i++];
             else c[k++] = b[j++];
         }
-        while (i < a.length) c[k++] = a[i++];
-        while (j < b.length) c[k++] = b[j++];}
+        while (i < a.length)
+            c[k++] = a[i++];
+        while (j < b.length)
+            c[k++] = b[j++];}
 
 }
 
