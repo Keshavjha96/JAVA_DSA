@@ -13,12 +13,14 @@ class Students{
     void setRno(int x){
         rno=x;
     }
-//    private void print(){
-//        System.out.println(name+" "+cgpa+" "+rno);
-//    }
-//    public void p(){
-//    print();
-//    }
+/*
+    private void print(){
+        System.out.println(name+" "+cgpa+" "+rno);
+    }
+    public void p(){
+    print();
+    }
+*/
 }
 public class PrivateKeyword {
 
