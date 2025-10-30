@@ -7,9 +7,9 @@ public class Constructors {
         Car(){  //default constructor
 
         }
-       Car(int x,String s){
-          price=x;
-          name=s;
+       Car(int price,String name){
+          this.price=price;
+         this.name=name;
         }
         Car(String s,int x){
             price=x;
