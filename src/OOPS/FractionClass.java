@@ -26,9 +26,13 @@ class Fraction{
         simplify();
     }
     void simplify(){
+        boolean isNegative=(num*den<0)?true:false;
+        num=Math.abs(num);
+        den=Math.abs(den);
         int gcd=hcf(num,den);
         num=num/gcd;
         den=den/gcd;
+        if (isNegative) num=-num;
     }
     int hcf(int a,int b){
         if(a==0) return b;
@@ -46,7 +50,7 @@ public class FractionClass {
         f1.print();
         f1.divide(f2);
         f1.print();
-        Fraction f3=new Fraction(50,100);
+        Fraction f3=new Fraction(50,-100);
         f3.print();
     }
 }
