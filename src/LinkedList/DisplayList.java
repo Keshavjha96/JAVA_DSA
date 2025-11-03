@@ -1,11 +1,5 @@
 package LinkedList;
-class Node{
-    int val;
-    Node next; //null
-    Node(int val){
-        this.val=val;
-    }
-}
+
 
 public class DisplayList {
     public static void displayRec(Node head){
