@@ -13,6 +13,15 @@ class linkedList{ //user defined data structure
     Node head; //null
     Node tail;
     int size;
+    boolean search(int val){
+        if (head==null) return false;
+        Node temp=head;
+        while(temp!=null){
+            if (temp.val==val) return true;
+            temp=temp.next;
+        }
+        return false;
+    }
     void addAthead(int val){
         Node temp=new Node(val);
         if (head==null) head=tail=temp;
@@ -22,16 +31,32 @@ class linkedList{ //user defined data structure
         }
         size++;
     }
-
     void addAtTail(int val){
-        Node temp=new Node(val);
-        if (tail==null) head=tail=temp;
-        else {
-            tail.next=temp;
-            tail=temp;
+        if (tail == null){
+          addAthead(val);
+          return;
         }
-        size++;
+        Node temp=new Node(val);
+        tail.next=temp;
+        tail=temp;
+        size ++;
     }
+    int get(int idx){
+        Node temp=head;
+        for(int i=1;i<=idx;i++){
+            temp= temp.next;
+        }
+        return temp.val;
+    }
+//    void addAtTail(int val){
+//        Node temp=new Node(val);
+//        if (tail==null) head=tail=temp;
+//        else {
+//            tail.next=temp;
+//            tail=temp;
+//        }
+//        size++;
+//    }
 
     void deleteAthead(){
         if (head==null){
@@ -52,6 +77,42 @@ class linkedList{ //user defined data structure
         }
        System.out.println();
     }
+
+    void insert(int val, int idx) {
+        if (idx<0 || idx>size){
+            System.out.println("Invalid Index!");
+            return;
+        }
+        if (idx==0) addAthead(val);
+        else if (idx==size)  addAtTail(val);
+        else {
+            Node temp=head;
+            for (int i=1;i<=idx-1;i++){
+                temp=temp.next;
+            }
+            Node t=new Node(val);
+            t.next=temp.next;
+            temp.next=t;
+            size++;
+        }
+    }
+
+    void delete(int idx) {
+        if (idx<0 || idx>=size){
+            System.out.println("Invaild index!");
+            return;
+        }
+        if (idx==0){
+            deleteAthead();
+            return;
+        }
+        Node temp=head;
+        for (int i=1;i<=idx-1;i++){
+            temp=temp.next;
+        }
+        temp.next=temp.next.next;//delete
+        if (idx==size-1) tail=temp;//we are deleting tail
+    }
 }
 public class LinkedListDataStructure {
     public static void main(String[] args) {
@@ -66,7 +127,9 @@ public class LinkedListDataStructure {
        ll.display();
        ll.deleteAthead();ll.display();
         System.out.println(ll.size);
-
-
+        ll.insert(40,2);
+        ll.display();
+        System.out.println(ll.get(4));
+        ll.delete(4);ll.display();
     }
 }
