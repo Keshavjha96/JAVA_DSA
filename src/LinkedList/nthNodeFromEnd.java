@@ -16,6 +16,18 @@ public class nthNodeFromEnd {
         }
         return temp;
     }
+    public static Node nthNode2(Node head,int n){
+        Node slow=head;
+        Node fast=head;
+        for (int i=1;i<=n;i++){
+            fast=fast.next;
+        }
+        while(fast!=null){
+            slow=slow.next;
+            fast=fast.next;
+        }
+        return slow;
+    }
     public static class Node{
         int data;
         Node next;
@@ -35,8 +47,9 @@ public class nthNodeFromEnd {
         c.next=d;
         d.next=e;
         e.next=f;
-        Node q=nthNode(a,3);
+        Node q=nthNode2(a,3);
         System.out.println(q.data);
+
     }
 
 }
