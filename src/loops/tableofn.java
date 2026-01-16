@@ -13,5 +13,12 @@ public class tableofn {
                 System.out.println(i);
             }
         }
+
+        int j = 1;
+        while (j <= 10) {
+            System.out.println(n + " x " + j + " = " + (n * j));
+            j++;
+        }
+
     }
 }
