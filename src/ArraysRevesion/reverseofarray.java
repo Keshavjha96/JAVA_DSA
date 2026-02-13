@@ -22,6 +22,7 @@ public class reverseofarray {
             i++;
             j--;
     }
+
         print(arr);
 }
 }
