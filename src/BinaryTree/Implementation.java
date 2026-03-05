@@ -1,10 +1,22 @@
 package BinaryTree;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
 class Node{
     int val;
     Node left;
     Node right;
     Node(int val){
         this.val=val;
+    }
+}
+class Pair{
+    int level;
+    Node node;
+    Pair(Node node,int level){
+        this.node=node;
+        this.level=level;
     }
 }
 public class Implementation {
@@ -25,13 +37,40 @@ public class Implementation {
         a.left = b;  a.right = c;
         b.left = d;  b.right = e;
         c.left = f;  c.right = g;
-        display(a);
+//        display(a);
+//        System.out.println();
+//        levelorder(a);
+//        levelOrderLineWise(a);
+//        System.out.println(size(a));
+//        System.out.println(sum(a));
+//        System.out.println(product(a));
+//        System.out.println(max(a));
+//        System.out.println(levels(a));
+    }
+
+//    private static void levelOrderLineWise(Node root) {
+//        Queue<Node> q=new LinkedList<>();
+//        int currlevel=0;
+//        q.add(new Pair(root,0));
+//        while (q.size()>0){
+//            Node front=q.remove();
+//            System.out.print(front.val+" ");
+//            if (root.left!=null) q.add(front.left);
+//            if (root.right!=null) q.add(front.right);
+//        }
+//        System.out.println();
+//    }
+
+    private static void levelorder(Node root) {
+        Queue<Node> q=new LinkedList<>();
+        q.add(root);
+        while (q.size()>0){
+            Node front=q.remove();
+            System.out.print(front.val+" ");
+            if (root.left!=null) q.add(front.left);
+            if (root.right!=null) q.add(front.right);
+        }
         System.out.println();
-        System.out.println(size(a));
-        System.out.println(sum(a));
-        System.out.println(product(a));
-        System.out.println(max(a));
-        System.out.println(levels(a));
     }
 
     private static int levels(Node root) {//kaam ki chizz
